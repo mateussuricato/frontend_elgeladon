@@ -17,6 +17,6 @@ Ferramentas usadas:
 
 ## API
 
-api se encontra no link abaixo:
+API consumida no projeto se encontra no link abaixo:
 
 https://github.com/mateussuricato/api_el_geladon
