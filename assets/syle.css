@@ -142,7 +142,6 @@ html {
   font-weight: 600;
   border-radius: 0.2rem;
   width: 180px;
-  margin-top: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   font-size: 1rem;
@@ -339,9 +338,33 @@ html {
 
 .button-modal-create{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto 25px auto;
   max-width: 1110px;
+}
+
+.msg-alert {
+  width: 20%;
+  text-align: center;
+  z-index: 9999999;
+  font-weight: 900;
+}
+
+.success {
+  background-color: blue;
+  color: #fff;
+  border: solid 1px white;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.danger {
+  background-color: #ff0000;
+  color: #fff;
+  border: solid 1px white;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 .Acoes{

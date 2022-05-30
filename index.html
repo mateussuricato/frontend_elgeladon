@@ -36,6 +36,7 @@
       </header>
 
       <section class="button-modal-create">
+        <span class="msg-alert"></span>
         <button type="button" class="default-button" onclick="abrirModal()">
           Cadastrar Paleta
         </button>
@@ -50,10 +51,22 @@
 
           <div class="modal-body">
             <div>
-              <form action="">
+              <form>
                 <input type="hidden" id="id" />
-                <input type="text" name="sabor" id="sabor" placeholder="Sabor da Paleta" required=> <input type="number" name="preco" id="preco"
-                placeholder="Preço da Paleta" required=>
+                <input
+                  type="text"
+                  name="sabor"
+                  id="sabor"
+                  placeholder="Sabor da Paleta"
+                  required
+                />
+                <input
+                  type="number"
+                  name="preco"
+                  id="preco"
+                  placeholder="Preço da Paleta"
+                  required
+                />
                 <textarea
                   type="text"
                   name="descricao"
@@ -69,11 +82,7 @@
                   placeholder="Link da Foto da Paleta"
                   required
                 />
-                <button
-                  type="submit"
-                  onclick="createPaleta()"
-                  id="button-form-modal"
-                >
+                <button type="submit" onclick="submitPaleta()" id="button-form-modal">
                   Cadastrar
                 </button>
               </form>
@@ -93,11 +102,16 @@
             <div class="btns_delete">
               <button
                 class="btn_delete_no btn_delete"
-                onclick="fecharModalDelete()"
+                onclick="fecharModalNao()"
               >
                 Não
               </button>
-              <button class="btn_delete_yes btn_delete">Sim</button>
+              <button
+                class="btn_delete_yes btn_delete"
+                onclick="fecharModalDelete()"
+              >
+                Sim
+              </button>
             </div>
           </div>
         </div>
@@ -107,7 +121,7 @@
       <div class="paleta-escolhida-espaco">
         <div id="paleta-escolhida-input-espaco">
           <input
-            type="number"
+            type="text"
             id="idPaleta"
             placeholder="Digite o ID da paleta e clique em 'Escolher'"
           />
