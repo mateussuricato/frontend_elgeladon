@@ -1,7 +1,7 @@
 # frontend_elgeladon
  frontend projeto elgeladon
 
-Esse foi o primeiro projeto, realizado para o curso da Blue EdTech módulo III.
+Esse projeto foi realizado para o curso da Blue EdTech módulo III.
 
 Clique na imagem abaixo para acessar o projeto:
 
