@@ -151,7 +151,7 @@ form.addEventListener("submit", () => {
       localStorage.setItem("type", "success");
     }
     
-
+    location.reload();
     fecharModal();
   }
   submitPaleta();
