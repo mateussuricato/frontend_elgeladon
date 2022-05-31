@@ -151,10 +151,10 @@ form.addEventListener("submit", () => {
       localStorage.setItem("type", "success");
     }
     
-    location.reload();
     fecharModal();
   }
   submitPaleta();
+  location.reload();
 });
 
 function abrirModalDelete(id) {
