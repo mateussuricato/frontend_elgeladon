@@ -1,4 +1,4 @@
-const baseURL = "https://api-elgeladon-mongodb.herokuapp.com";
+const baseURL = "http://localhost:3004";
 const alert = document.querySelector(".msg-alert");
 
 async function findAllPaletas() {
@@ -136,7 +136,22 @@ form.addEventListener("submit", () => {
 
     const novaPaleta = await response.json();
 
-    document.location.reload(true);
+    if (novaPaleta.message != undefined) {
+      localStorage.setItem("message", novaPaleta.message);
+      localStorage.setItem("type", "danger");
+      showMsg();
+      return;
+    }
+  
+    if (modoEdicaoAtivado) {
+      localStorage.setItem("message", "Paleta atualizada com sucesso");
+      localStorage.setItem("type", "success");
+    } else {
+      localStorage.setItem("message", "Paleta criada com sucesso");
+      localStorage.setItem("type", "success");
+    }
+    
+
     fecharModal();
   }
   submitPaleta();
@@ -173,10 +188,10 @@ async function deletePaleta(id) {
   localStorage.setItem("message", result.message);
   localStorage.setItem("type", "success");
 
-  location.reload();
-
+  showMsg();
   document.getElementById("paletaList").innerHTML = "";
   fecharModalDelete();
+  location.reload();
 }
 
 function closeMessageAlert() {
