@@ -152,6 +152,7 @@ form.addEventListener("submit", () => {
     }
     
     fecharModal();
+    location.reload();
   }
   submitPaleta();
   location.reload();
