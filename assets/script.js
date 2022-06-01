@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3004";
+const baseURL = "https://api-elgeladon-mongodb.herokuapp.com";
 const alert = document.querySelector(".msg-alert");
 
 async function findAllPaletas() {
