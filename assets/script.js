@@ -1,8 +1,9 @@
-const baseURL = "https://api-elgeladon-mongodb.herokuapp.com";
+const baseURL = "http://localhost:3004";
 const alert = document.querySelector(".msg-alert");
 
 async function findAllPaletas() {
   const response = await fetch(`${baseURL}/paletas`);
+
   const paletas = await response.json();
 
   paletas.forEach(function (paleta) {
@@ -38,7 +39,6 @@ async function findByIdPaletas() {
   if (id == "") {
     localStorage.setItem("message", "Digite um ID para pesquisar");
     localStorage.setItem("type", "danger");
-
     showMsg();
     return;
   }
@@ -98,7 +98,7 @@ function fecharModal() {
   document.querySelector(".modal-overlay").style.display = "none";
 
   document.querySelector("#sabor").value = "";
-  document.querySelector("#preco").value = 0;
+  document.querySelector("#preco").value = none;
   document.querySelector("#descricao").value = "";
   document.querySelector("#foto").value = "";
 }
@@ -120,7 +120,7 @@ form.addEventListener("submit", () => {
       foto,
     };
 
-    const modoEdicaoAtivado = id != "";
+    const modoEdicaoAtivado = !!id;
 
     const endpoint =
       baseURL + (modoEdicaoAtivado ? `/update/${id}` : `/create`);
@@ -136,13 +136,17 @@ form.addEventListener("submit", () => {
 
     const novaPaleta = await response.json();
 
+    //document.location.reload(true);
+
     if (novaPaleta.message != undefined) {
       localStorage.setItem("message", novaPaleta.message);
       localStorage.setItem("type", "danger");
       showMsg();
       return;
     }
-  
+
+    console.log("teste");
+
     if (modoEdicaoAtivado) {
       localStorage.setItem("message", "Paleta atualizada com sucesso");
       localStorage.setItem("type", "success");
@@ -150,12 +154,12 @@ form.addEventListener("submit", () => {
       localStorage.setItem("message", "Paleta criada com sucesso");
       localStorage.setItem("type", "success");
     }
-    
-    fecharModal();
-    location.reload();
+
+    document.getElementById("id").value = "";
+    //fecharModal()
+    //document.location.reload(true);
   }
-  submitPaleta();
-  location.reload();
+  submitPaleta()
 });
 
 function abrirModalDelete(id) {
@@ -172,10 +176,6 @@ function fecharModalDelete() {
   document.querySelector("#overlay-delete").style.display = "none";
 }
 
-function fecharModalNao() {
-  document.querySelector("#overlay-delete").style.display = "none";
-}
-
 async function deletePaleta(id) {
   const response = await fetch(`${baseURL}/delete/${id}`, {
     method: "delete",
@@ -186,12 +186,10 @@ async function deletePaleta(id) {
   });
 
   const result = await response.json();
+
   localStorage.setItem("message", result.message);
   localStorage.setItem("type", "success");
 
-  showMsg();
-  document.getElementById("paletaList").innerHTML = "";
-  fecharModalDelete();
   location.reload();
 }
 
