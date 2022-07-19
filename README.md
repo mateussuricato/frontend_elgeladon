@@ -1,11 +1,11 @@
 # frontend_elgeladon
- frontend projeto elgeladon
+ frontend projeto elgeladon, HTML | CSS | vanilla Js
 
 Esse projeto foi realizado para o curso da Blue EdTech módulo III.
 
 Clique na imagem abaixo para acessar o projeto:
 
-<a href="https://frontend-elgeladon.onrender.com" target="_blank"><img style="width:10%" src="https://cdn-icons-png.flaticon.com/512/2136/2136384.png" alt="ícone pokedex"></a>
+<a href="https://frontendelgeladon-production.up.railway.app" target="_blank"><img style="width:10%" src="https://cdn-icons-png.flaticon.com/512/2136/2136384.png" alt="ícone pokedex"></a>
 
 ## Stacks
 Ferramentas usadas:
