@@ -1,5 +1,7 @@
 # frontend_elgeladon
- frontend projeto elgeladon, HTML | CSS | vanilla Js
+ frontend projeto elgeladon. CRUD.
+ 
+ HTML | CSS | vanilla Js
 
 Esse projeto foi realizado para o curso da Blue EdTech módulo III.
 
