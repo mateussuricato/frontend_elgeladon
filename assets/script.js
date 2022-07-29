@@ -1,4 +1,4 @@
-const baseURL = "https://apielgeladon-production.up.railway.app";
+const baseURL = "https://apigeladon-mongodb-projetoblue.herokuapp.com";
 const alert = document.querySelector(".msg-alert");
 
 async function findAllPaletas() {
